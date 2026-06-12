@@ -143,8 +143,8 @@ productRouter.get('/api/search-products',async(req,res)=>{
         //For example if the user search for "apple", the regex will check 
         //if "apple" is part of any ProductName, so products name "Green Apple pie"
         //or "Fresh Apples" would all match because they contain the world "apple"
-        {productName:{$regex:query,options:"i"}},
-        {description:{$regex:query,options:"i"}}
+        {productName:{$regex:query,$options:"i"}},
+        {description:{$regex:query,$options:"i"}}
       ]
     })
 //check any products found 
